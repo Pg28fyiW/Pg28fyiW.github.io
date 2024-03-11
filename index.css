@@ -11,8 +11,8 @@ h3 {
     .wapper {
         width: 880px;
         margin: 0 auto;
-        border: 1px solid #1904ff;
-        /* background-color: burlywood; */
+        border: 1px solid #000;
+        background-color: aqua;
     }
 
 }
@@ -28,7 +28,7 @@ h3 {
 .root_CCC:where(.astro_CCC) {
     /* ここを修正 */
     /* height: 25vw; */
-    height: 540px;
+    height: 500px;
 
     overflow: hidden;
     position: relative;
@@ -39,19 +39,21 @@ h3 {
 
 .slider_CCC:where(.astro_CCC) {
     position: absolute;
-    /* ここを修正 */
+    /* カルーセルをタイトルに近づけるため修正 */
     /* top: 50%; */
     top: 38%;
     transform: translateY(-45%);
     width: 100%;
-    height: 100%;
+    /* ここを修正 */
+    height: 110%;
     overflow: hidden;
+    background-color: yellow;
 }
 
 .slider__Group_CCC:where(.astro_CCC) {
     position: relative;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 49%;
+    transform: translateY(-45%);
     /* ここを修正 　画像の下に文字を表示するため */
     /* width: 100%;
     height: 80%; */
@@ -61,10 +63,10 @@ h3 {
      margin: 0 auto; */
 }
 
+/* ここから追加　961px以上のインディケーターの高さの位置を決める */
 .slider__IndicatorGroup_CCC:where(.astro_CCC) {
     bottom: -70px;
 }
-
 
 .slider__Thumb_CCC:where(.astro_CCC) {
     /* ここを修正 */
@@ -77,6 +79,9 @@ h3 {
     object-position: center;
 
     margin: 0 auto;
+    
+    /* ここを追加 */
+    border-radius: 12px;
 }
 
 .slider__Content_CCC:where(.astro_CCC) {
@@ -98,13 +103,16 @@ h3 {
 
 .image_caption {
     /* position: absolute; */
-    bottom:2vw;
-    left: 0;
-    width: 90%;    /* テキストの幅を調整 */
+    bottom:1.5rem;
+    left: 20px;
+    width: 80%;    /* テキストの幅を調整 */
     padding: 3px; /* 必要に応じて余白を調整 */
     background-color: rgba(255, 255, 255, 0.7);
     color: black;
     box-sizing: border-box;
+    
+    /* 左に移動 */
+    transform: translateX(45px);
 }
 
 
@@ -123,7 +131,7 @@ h3 {
     /* 左右のスライダーアイテムとの間隔（余白）はこの幅で決まる */
     width: 60%;
     /* ここを修正 */
-    height: 105%;
+    height: 102%;
     /* height: 100%; */
     transition: 1s all ease;
     background-size: cover;
@@ -264,7 +272,7 @@ h3 {
     left: 0;
     right: 0;
     margin: auto;
-    bottom: 1px;
+    /* bottom: 1px; */
 }
 
 .slider__Indicator_CCC:where(.astro_CCC) {
@@ -283,12 +291,11 @@ h3 {
 }
 
 
-/* @media screen and (max-width: 1080px) { */
 @media screen and (max-width: 960px) {
     .root_CCC:where(.astro_CCC) {
         /* ここを修正 　正方形にするため */
         /* height: 35vw; */
-        height: 60vw;
+        height: 55vw;
     }
     .slider__prev_CCC:where(.astro_CCC) {
         /* ここを修正 　正方形にするため */
@@ -347,7 +354,7 @@ h3 {
 
     /* ここを追加 　画像の下に文字を表示するため */
     .image_caption {
-        font-size: 2.5vw;
+        font-size: 2.0vw;
     }
 
     .slider__Group_CCC:where(.astro_CCC) {
@@ -492,21 +499,8 @@ h3 {
 
 
 /* ここから追加　インディケーターの高さの位置を決める */
-@media screen and (min-width: 1081px) {
-    .slider__IndicatorGroup_CCC:where(.astro_CCC) {
-            bottom: -70px;
-    }
-}
-
-@media screen and (min-width: 769px) and (max-width: 1080px) {
-        .slider__IndicatorGroup_CCC:where(.astro_CCC) {
-            bottom: -70px;
-    }
-}
-
 @media screen and (max-width: 768px) {
     .slider__IndicatorGroup_CCC:where(.astro_CCC) {
             bottom: -5px;
     }
 }
-/* ここまで追加 */
