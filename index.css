@@ -257,7 +257,9 @@ h3 {
     align-items: center;
     justify-content: center;
     z-index: 20;
-    gap: 12px;
+    /* gapだと古いブラウザに対応してないので、
+    macのsafariでインディケーターが詰まって表示されるため削除 */
+    /* gap: 12px; */
     position: absolute;
     left: 0;
     right: 0;
@@ -271,6 +273,9 @@ h3 {
     height: 8px;
     background: rgba(0, 16, 14, 12);
     border-radius: 40px;
+    /* gapだと古いブラウザに対応してないので、
+    macのsafariでインディケーターが詰まって表示されるため削除 */
+    margin: 0 6px;
 }
 
 .slider__Indicator_CCC:where(.astro_CCC).indicatorCurrent-BZV63CCC {
