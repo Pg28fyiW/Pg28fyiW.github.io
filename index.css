@@ -1,0 +1,1751 @@
+body {
+    background: #f4f4f4;
+}
+
+body.fixed {
+    overflow: hidden;
+}
+
+.temperature_defference span {
+    color: #FA966F;
+    font-weight: bold;
+    font-size: 1.6rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+}
+
+section,.wrap {
+    width: 92vw;
+    margin: 0 auto;
+}
+
+/* @media screen and (min-width: 961px) {
+    .wrap {
+        margin: 0;
+    }
+} */
+
+@media screen and (max-width: 320px) {
+    section {
+        width: 95vw;
+    }
+}
+
+.none {
+    display: none;
+}
+
+.block {
+    display: block;
+}
+
+/* tabs 月別、週別、日別タブ （ここではとくにデザインに影響しない） */
+.tabs h3 span.confirmed {
+    padding: 4px;
+    background: #FF7E45;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 10px;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+.tabs h3 span.unconfiremed {
+    padding: 4px;
+    background: #FFB99A;
+    border-radius: 2px;
+    color: #707070;
+    font-size: 10px;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* 月別タブの中身 */
+h3 {
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.price {
+    font-size: 3.2rem;
+    font-weight: bold;
+    color: #EB1E1E;
+}
+
+.price.small {
+    font-size: 1.8rem;
+}
+
+.price span {
+    font-weight: bold;
+    font-size: 1.6rem;
+}
+
+.price.small span {
+    font-size: 1.4rem;
+}
+
+.txt_red {
+    color: #EB1E1E;
+}
+
+/* 週別の62.5kWh、-3kWh */
+.kwh {
+    color: #666666;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* 週別の62.5kWh、-3kWh */
+.kwh span {
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+/* 月別タブ内の赤い点線で囲まれた部分「当月の電気料金予測」 */
+.price_forecast {
+    border: 2px dashed #FF7E45;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* 月別、週別、日別タブ（ここでタブのデザインを作っている！！！！！） */
+.tab {
+    width: 92vw;
+    margin: 20px auto 0 auto;
+}
+
+/* 月別、週別、日別タブ（ここでタブのデザインを作っている！！！！！） */
+.tab ul li {
+    display: inline-block;
+    width: 32%;
+    text-align: center;
+    background: #E8DFDF;
+    border-radius: 8px 8px 0 0;
+    height: 36px;
+    line-height: 36px;
+    margin-right: 2vw;
+}
+
+.tab ul li:last-child {
+    margin-right: 0;
+}
+
+/* 月別、週別、日別タブ（現在のタブの色） */
+.tab ul li.current {
+    background: #EC1F20;
+}
+
+.tab ul li a {
+    display: block;
+}
+
+/* 月別、週別、日別タブ（現在のタブのリンクの文字色） */
+.tab ul li.current a {
+    color: #fff;
+}
+
+/* 月別、週別、日別タブのグラフのヘッダーの価格部分 */
+.price_txt_area {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* 週別タブのグラフのヘッダーの価格もしくはkwh部分「1,860円、62.5kwh」 */
+.week_left {
+    width: 70%;
+}
+
+/* 週別タブのグラフのヘッダーの「前週比、-123円、-3kWh」部分 */
+.week_right {
+    width: 30%;
+}
+
+/* 週別タブのグラフのヘッダーの「前週比」部分 */
+.compare_last_week {
+    font-size: 1rem;
+}
+
+/* グラフの下の凡例部分（月別の場合：確定料金、未確定料金、未確定料金、前年、似た家庭、円、kWh） */
+/* グラフの下の凡例部分（週別の場合：前週、翌週） */
+.graph_head {
+    padding: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* 月別の棒グラフの目盛りのラベル（確定料金、未確定料金、当月予測） */
+.bar_graph li {
+    margin-right: 3px;
+    font-size: 10px;
+}
+
+/* 月別の棒グラフの目盛りのラベル（確定料金、未確定料金、当月予測） */
+.bar_graph li::before {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    border-radius: 50%;
+    content: "";
+    margin-right: 2px;
+    vertical-align: text-top;
+}
+
+/* 月別の棒グラフの目盛りのラベル（確定料金） */
+.bar_graph li:first-child::before {
+    background: #FF7E45;
+}
+
+/* 月別の棒グラフの目盛りのラベル（未確定料金） */
+.bar_graph li:nth-child(2)::before {
+    background:  #FFB99A;
+}
+
+/* 月別の棒グラフの目盛りのラベル（当月予測） */
+.bar_graph li:last-child::before {
+    border: 1px dashed #FF7E45;
+}
+
+/* 月別の折れ線グラフの目盛りのラベル（前年、似た家庭） */
+.line_graph li {
+    margin-right: 3px;
+    font-size: 10px;
+}
+
+/* 月別の折れ線グラフの目盛りのラベル（前年、似た家庭） */
+.line_graph li::before {
+    width: 12px;
+    height: 2px;
+    display: inline-block;
+    border-radius: 10px;
+    content: "";
+    margin-right: 2px;
+    position: relative;
+    top: -4px;
+}
+
+/* 月別の折れ線グラフの目盛りのラベル（前年） */
+.line_graph li:nth-child(1) {
+    padding-top: 2px;
+}
+
+/* 月別の折れ線グラフの目盛りのラベル（前年） */
+.line_graph li:nth-child(1)::before {
+    background: #F85EB0;
+}
+
+/* 月別の折れ線グラフの目盛りのラベル（似た家庭） */
+.line_graph li:nth-child(2)::before {
+    background: #958DFF;
+}
+
+/* 月別の円とkWhの切り替えボタン */
+.switching {
+    background: #EBEBEB;
+    border-radius: 9px;
+    width: 32%;
+    height: 32px;
+}
+
+/* 月別の円とkWhの切り替えボタン */
+.switching li {
+    line-height: 32px;
+    width: 50%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 月別の円とkWhの切り替えボタン（初期値は円がアクティブ） */
+.switching li.active {
+    margin: 2px;
+    border-radius: 7px;
+    background: #EC1F20;
+    color: #fff;
+    line-height: 28px;
+    font-weight: bold;
+}
+
+/* 週別グラフの前週の＜の画像がグレーと文字のスタイル */
+.last_week {
+    background: url(../images/back_off.png) no-repeat left center;
+    padding-left: 20px;
+    color: #CCCCCC;
+}
+
+/* 週別グラフの翌週の＞の画像がグレーと文字のスタイル */
+.next_week {
+    background: url(../images/next_off.png) no-repeat right center;
+    padding-right: 20px;
+    color: #CCCCCC;
+}
+
+/* 週別グラフの前週の＜の画像が赤色でクリックできる時のスタイル */
+.last_week.on {
+    background: url(../images/back_on.png) no-repeat left center;
+    color: #EC1F20;
+}
+
+/* 週別グラフの翌週の＞の画像が赤色でクリックできる時のスタイル */
+.next_week.on {
+    background: url(../images/next_on.png) no-repeat right center;
+    color: #EC1F20;
+}
+
+/* 週別グラフの＜前週、翌週＞がクリック出来ないときとクリック出来るとき、背景画像が要素に完全に収まるように拡大縮小される */
+.last_week,.next_week,.last_week.on,.next_week.on {
+    background-size: contain;
+}
+
+/* 週別グラフの「5/3週」「5/10週」 */
+.last_week_ico,.this_week_ico {
+    font-size: 1rem;
+}
+
+/* 週別グラフの「5/3週」の前に●を挿入する */
+.last_week_ico::before {
+    content:"●";
+    color: #FFCB77;
+}
+
+/* 週別グラフの「5/10週」の前に●を挿入する */
+.this_week_ico::before {
+    content:"●";
+    color: #FF7E45;
+}
+
+/* 週別グラフのカレンダーの「input type="text"」と「▼の画像」の部分 */
+.wSel {
+    border: 1px solid #EB1E1E;
+    border-radius: 8px;
+    padding: 10px 30px 10px 10px;
+    background: url(../images/bg_open.png) no-repeat right center;
+    background-size: 15%;
+    margin: 0 10px;
+    text-align: center;
+    width: 50vw;
+    font-weight: bold;
+}
+
+/* ヘッダーメニューの天気予報の画像の部分 */ 
+.weather img {
+    width: 80%;
+}
+
+
+/* お役立ちコンテンツ（ピックアップ） */
+.idea_area {
+    background: #fff; /* 白枠 */
+}
+
+.idea_area a {
+    color: #EB1E1E;
+}
+
+/* お役立ちコンテンツ（ピックアップ）では使っていない */
+.idea_area .arrow::after {
+    border: 2px solid #EB1E1E;
+    border-bottom: none;
+    border-left: none;
+}
+
+.idea_area {
+    background: #fff;
+    border-radius: 12px; /* 白枠の角丸 */
+    padding: 8px;
+    margin-top: 12px;
+}
+@media screen and (min-width: 961px) {
+    .idea_area {
+        margin-top: 20px !important;
+    }
+}
+.idea_area img {
+    vertical-align: bottom;
+    border-radius: 10px; /* 画像の角丸（実際ここはスマソさんのデザインでは、設定されていなかった。） */
+}
+
+.idea_head {
+    border-bottom: 1px solid #E8E8E8;
+    padding-bottom: 12px;
+    margin-bottom: 12px; 
+}
+
+.idea_img {
+    width: 31%;
+}
+
+.idea_txt {
+    width: 64%;
+    font-size: 1.4rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 現在表示中のプラン */
+.plan_area {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* 「現在表示中のプラン：」の文字列 */
+.plan_area p {
+    line-height: 27px;
+    white-space: nowrap;
+}
+
+/* 現在表示中のプランの【？】の画像 */
+.plan_area p img {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle; /* ？（はてな）が縦の真ん中にくる */
+}
+
+/* 現在表示中のプランの「プルダウンメニュー」 */
+.select_plan li {
+    display: inline;
+    line-height: 28px;
+    /* margin: 0 auto; */
+    text-align: center;
+    font-size: 1.4rem;
+    border-radius: 50px;
+    /* padding: 2px 14px 0; */
+    padding: 0px 10px;
+    box-sizing: border-box;
+    background: #fff;
+    box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.20);
+}
+
+/* 現在表示中のプランの「プラン名」の左横の画像（例：電気マークの画像など） */
+.select_plan li::before {
+    content: "";
+    display: inline-block;
+    /* width: 20px; */
+    width: 17px;
+    height: 20px;
+    background-size: 20px;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    margin-top: -4px;
+}
+
+/*　現在表示中のプラン：下矢印▼をつけている */
+.select_plan li::after
+ {
+    content: "";
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border: 2px solid #1d1d1d;
+    border-bottom: none;
+    border-left: none;
+    transform: rotate(135deg);
+    /* margin-left: 12px; */
+    /* margin-left: 2px;  */
+    margin-left: 5px; 
+    position: relative;
+    top: -4px;
+}
+
+.select_contract_arrow::after {
+    margin: 0 10px 0 20px;
+        
+    content: "";
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border: 2px solid #1d1d1d;
+    border-bottom: none;
+    border-left: none;
+    transform: rotate(135deg);
+    /* margin-left: 12px; */
+    margin-left: 2px; 
+    position: relative;
+    top: -4px;
+    left: 5px;
+}
+
+
+/* 現在表示中のプラン：スタンダード */
+.select_plan li.plan_electric {
+    border: 1px solid #EB1E1E;
+    color: #Eb1E1E;
+}
+
+/* 現在表示中のプラン：スタンダード */
+.select_plan li.plan_electric::before {
+    background-image: url(../images/plan_electric.png);
+    /* background-size: 20px; */
+    background-size: 15px;  /* これは自分で追加 */
+    background-position: bottom;
+}
+
+/* 現在表示中のプラン：とくとくガスプラン */
+.select_plan li.plan_gas {
+    border: 1px solid #0080CB;
+    color: #0080CB;
+    display: none;
+}
+
+/* 現在表示中のプラン：とくとくガスプラン */
+.select_plan li.plan_gas::before {
+    background-image: url(../images/plan_gas.png);
+    background-size: 13px;  /* これは自分で追加 */
+}
+
+/* 現在表示中のプラン：集約 */
+.select_plan li.plan_intensive {
+    border: 1px solid #00A63C;
+    color: #00A63C;
+    display: none;
+}
+
+/* 現在表示中のプラン：集約 */
+.select_plan li.plan_intensive::before {
+    background-image: url(../images/plan_syuyaku.png);
+    padding-left: 5px;
+}
+
+
+
+
+
+
+/* モーダル */
+.modal h2 {
+    margin: 0;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+.modal p {
+    font-size: 1.4rem;
+    margin: 25px 0 10px 0;
+}
+
+.modal input[type="text"] {
+    width: 100%;
+    height: 50px;
+    font-size: 2.8rem;
+    padding: 0 10px;
+    border: 1px solid #237AFC;
+    margin-right: 10px;
+    text-align: right;
+}
+
+
+
+
+
+/* グラフのデザイン */
+.graph {
+    overflow-x: scroll;
+}
+
+/* 月別グラフ(canvas)とX軸の丸いラベル部分 */
+#graph_month {
+    width: 600px;
+    margin: 0 auto;
+}
+
+/* 日別グラフ(canvas)とX軸の丸いラベル部分 */
+#graph_day {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+/* 月別グラフ、日別グラフの「グラフ(canvas)」と「X軸の丸いラベル部分」と「Y軸のラベル部分(canvas)」 */
+.graph_mWrap,
+.graph_dWrap {
+    position: relative;
+}
+
+/* 月別グラフ、日別グラフの「グラフ(canvas)」と「X軸の丸いラベル部分」と「Y軸のラベル部分(canvas)」 */
+.graph_mWrap .label,
+.graph_dWrap .label {
+    position: absolute;
+    z-index: 1;
+    top: 15px;
+    right: -1px;
+    text-align: left;
+    background: #fff;
+}
+
+/* 月別グラフの「グラフ(canvas)」と「X軸の丸いラベル部分」と「Y軸のラベル部分(canvas)」 */
+.graph_mWrap .label {
+    top: 0;
+}
+
+/* 月別、週別、日別タブの内容部分 */
+.price_area {
+    background: #fff;
+    border-radius: 0 0 12px 12px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.price_txt_area {
+    padding: 20px;
+}
+
+/* 週別、日別の「時間別の使用量を確認」ボタン*/
+.btn {
+    width: 60vw;
+    height: 40px;
+    line-height: 36px;
+    margin: 20px auto;
+    text-align: center;
+    border: 1px solid #000;
+    font-size: 1.4rem;
+    border-radius: 50px;
+}
+
+/* 週別、日別の「時間別の使用量を確認」ボタン*/
+.btn a {
+    display: block;
+    font-weight: bold;
+    padding-top: 2px;
+}
+
+/* 月別タブの月ラベル */
+.month_list {
+    width: 545px;
+}
+
+/* 月別タブの月ラベルを丸くしている */
+.month_list li {
+    border-radius: 50%;
+    background: #EBEBEB;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    margin: 3px 6.4px;
+}
+
+/* 日別グラフのX軸の丸いラベルの部分 */
+#graph_day .day_list {
+    padding-right: 28px;
+    padding-left: 4px;
+    justify-content: space-between;
+}
+
+/* 日別グラフのX軸の丸いラベルの部分 */
+#graph_day .day_list li {
+    margin: 0;
+    border-radius: 50%;
+    background: #EBEBEB;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 月別グラフのX軸の月ラベルをクリックしたら、ラベルを赤くしている
+   日別グラフのX軸の日ラベルをクリックしたら、ラベルを赤くしている
+*/
+.month_list li.current,
+.day_list li.current {
+    background: #EB1E1E !important;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* question.pngのデザイン */
+.question {
+    width: 16px;
+    height: 16px;
+    vertical-align: sub;
+    cursor: pointer;
+}
+
+/* モーダル */
+.modal_content {
+    position: relative;
+}
+
+.close_about {
+    border-radius: 50%;
+    background: #fff;
+    width: 35px;
+    height: 35px;
+    line-height: 30px;
+    position: absolute;
+    top: -65px;
+    right: 0;
+    font-size: 2.5rem !important;
+    text-align: center;
+}
+
+.modal_link {
+    background: #EB1E1E;
+    color: #fff;
+    border-radius: 50px;
+    width: auto;
+    height: 40px;
+    line-height: 40px;
+    margin: 20px auto;
+    text-align: center;
+    display: block;
+}
+
+
+canvas {
+    width: 600px;
+    margin: 0 auto;
+}
+
+.no_graph {
+    background: #FFE3D6;
+    border-radius: 10px;
+    text-align: center;
+    padding: 60px 0;
+    margin: -10px 20px 0;
+    max-width: 600px;
+}
+
+.no_graph h3 {
+    margin-top: 20px;
+}
+
+.no_graph p img {
+    width: 20%;
+}
+
+
+
+/* 現在表示中のプランのモーダル */
+#plan .modal_content {
+    border-radius: 10px;
+    padding: 0px 15px 20px;
+    /* max-height: 63vh; */
+}
+
+/* 現在表示中のプランのモーダル */
+.plans {
+    overflow: scroll;
+    max-height: 44vh;
+    margin-top: 20px;
+}
+
+.plans div {
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    background: #f4f4f4;
+    cursor: pointer;
+}
+
+.plans div:last-child {
+    margin-bottom: 0;
+}
+
+.plans div.selected {
+    background: #fff0f0;
+    border: 4px solid #fdb4b4;
+}
+
+#plan h2 {
+    padding-top: 20px;
+    font-size: 1.7rem;
+}
+
+.plans div h3 {
+    font-size: 1.4rem;
+}
+
+.plans div h3::before {
+    content: "";
+    display: inline-block;
+    width: 21px;
+    height: 21px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    margin-top: -4px;
+}
+
+.plans h4 {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.plans p {
+    font-size: 1rem;
+    margin: 12px 0 0 0;
+}
+
+.plan1 h3 {
+    color: #EB1E1E;
+}
+
+.plan1 h3::before {
+    background-image: url(../images/plan_electric.png);
+}
+
+.plan2 h3 {
+    color: #0080CB;
+}
+
+.plan2 h3::before {
+    background-image: url(../images/plan_gas.png);
+}
+
+.plan3 h3 {
+    color: #00A63C;
+}
+
+.plan3 h3::before {
+    background-image: url(../images/plan_syuyaku.png);
+    padding-left: 5px;
+}
+
+main {
+    padding-bottom: 40px;
+}
+
+/* 日別グラフのヘッダーのお天気情報 */
+.weather_area_day {
+    border: 1px solid #ebebeb;
+    border-radius: 1rem;
+    color: #666;
+    padding: 3px 5px;
+}
+
+@media screen and (min-width: 961px) {
+    .wrap {
+        margin: 0;
+    }
+
+    .flex_pc {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    main {
+        overflow-x: hidden;
+        padding-bottom: 38px;
+    }
+
+    .main_wrap {
+        background: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .tab ul li {
+        width: 287px;
+    }
+
+    .close_about {
+        width: 40px;
+        height: 40px;
+        line-height: 35px;
+        top: -75px;
+        font-size: 2.7rem !important;
+    }
+
+    .modal h2 {
+        font-size: 2rem;
+    }
+
+    .modal p {
+        font-size: 1.6rem;
+    }
+
+    /* 月別、週別、日別を含めた部分 */
+    .price_area h3 {
+        font-size: 1.8rem;
+    }
+
+    .tab ul li {
+        font-size: 1.4rem;
+        margin-right: 10px;
+    }
+
+    /* 月別の場合：5月の確定の枠、4月の未確定の枠
+    　 週別の場合：5月10日週の電気料金の枠
+    */
+    .price_txt_area {
+        max-width: initial;
+        width: 832px;
+        padding: 20px 0;
+    }
+
+    /* 価格（月別の場合：1,860円、週別の場合：3,875円） */
+    .price {
+        font-size: 3.4rem;
+    }
+
+    /* 月別の円／kWh切り替えボタン */
+    .switching {
+        width: 114px;
+        height: 38px;
+        font-size: 1.6rem;
+    }
+
+    /* 月別の円／kWh切り替えボタン */
+    .switching li {
+        line-height: 38px;
+        cursor: pointer;
+    }
+
+    /* 月別の円／kWh切り替えボタン */
+    .switching li.active {
+        line-height: 30px;
+        margin: 4px;
+    }
+
+    .btn {
+        width: 223px;
+        font-size: 1.6rem;
+    }
+
+    /* おすすめ */
+
+
+    /* お役立ちコンテンツ（ピックアップ） */
+    .idea_area {
+        width: 430px;
+        height: 112px;
+    }
+
+    .point_area h3,.idea_area h3 {
+        font-size: 1.8rem;
+    }
+
+    /* お役立ちコンテンツ（ピックアップ） */
+    .idea_area {
+        border-radius: 10px; /* 白枠の角丸 */
+        padding: 10px;
+    }
+
+    .point_area p,.idea_area p {
+        font-size: 1.6rem;
+    }
+
+    /* お役立ちコンテンツ（ピックアップ）の画像の部分 */
+    .idea_img {
+        width: 122px;
+    }
+
+    /* お役立ちコンテンツ（ピックアップ）のテキストの部分 */
+    .idea_txt {
+        width: 264px;
+    }
+
+
+
+
+    .tepcon {
+        width: 60px;
+    }
+
+    .bg_message {
+        width: 135px;
+    }
+
+    .get {
+        width: 129px;
+        height: 62px;
+    }
+
+    /* 週別グラフのカレンダーの「input type="text"」 */
+    .wSel {
+        width: 210px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    /* ヘッダーメニューの天気予報の画像の部分 */ 
+    .weather img {
+        width: 87px;
+    }
+
+    /* 日別グラフのヘッダーのお天気情報 */
+    .weather_area_day .weather img {
+        width: auto;
+        height: 21px;
+    }
+
+    /* 日別グラフのヘッダーのお天気情報 */
+    .weather_area_day {
+        width: 100px;
+    }
+
+    /* 日別グラフのヘッダーのお天気情報 */
+    .weather_area_day p {
+        font-size: 1.2rem;
+    }
+
+    /* 週別タブの「1,860円」の幅 */
+    .week_left {
+        width: 175px;
+    }
+
+    /* 週別タブの中身（前週比） */
+    .compare_last_week {
+        font-size: 1.2rem;
+    }
+
+    /* 週別タブの中身（5/3週、5/10週） */
+    .last_week,.next_week {
+        font-size: 1.6rem;
+    }
+
+    /* 週別タブの中身（前週、翌週） */
+    #graph_tab2 .graph_head {
+        max-width: initial;
+        width: 376px;
+    }
+
+    /* 月別グラフ(canvas)とX軸の丸いラベル部分 */
+    #graph_month {
+        width: 660px;
+    }
+
+    /* 月別グラフのX軸の丸いラベル部分 */
+    .month_list {
+        width: 600px;
+        align-items: center;
+        margin: 0 130px 0 5px;
+    }
+
+    .month_list li {
+        width: 28px;
+        height: 28px;
+        line-height: 28px;
+        font-size: 1rem;
+        cursor: pointer;
+    }
+
+    .month_list li.current {
+        width: 32px;
+        height: 32px;
+        line-height: 32px;
+        font-size: 1.2rem;
+    }
+
+    /* 月別グラフの「グラフ(canvas)」と「X軸の丸いラベル部分」と「Y軸のラベル部分(canvas)」 */
+    .graph_mWrap .label {
+        padding-right: 110px;
+        display: none;
+    }
+
+    /* 月別グラフの目盛りのラベル（確定料金、未確定料金、当月予測） */
+    .bar_graph li {
+        margin-right: 10px;
+        font-size: 1.2rem;
+    }
+
+    /* 月別グラフの目盛りのラベル（確定料金、未確定料金、当月予測） */
+    .bar_graph li::before {
+        width: 14px;
+        height: 14px;
+        margin-right: 4px;
+    }
+
+    /* 月別グラフの目盛りのラベル（前年、似た家庭） */
+    .line_graph li {
+        font-size: 1.2rem;
+        margin-top: 10px;
+        margin-right: 10px;
+    }
+
+    .line_graph li::before {
+        margin-right: 4px;
+    }
+
+    /* グラフの下の凡例部分（月別の場合：確定料金、未確定料金、未確定料金、前年、似た家庭、円、kWh） */
+    /* グラフの下の凡例部分（週別の場合：前週、翌週） */
+    .graph_head {
+        max-width: initial;
+        width: 660px;
+        padding: 10px 0;
+    }
+
+    /* 週別グラフの5/3週、5/10週の部分 */
+    .last_week_ico,.this_week_ico {
+        font-size: 1.2rem;
+    }
+
+    /* 週別グラフの5/3週、5/10週の部分 */
+    .last_week_ico::before,.this_week_ico::before {
+        margin-right: 4px;
+        font-size: 1.4rem;
+    }
+
+    /* 週別グラフ */
+    #graph_tab2 {
+        padding: 0 24px;
+    }
+
+    /* 日別グラフのcanvasと丸いラベル部分 */
+    .graph_dWrap {
+        margin-bottom: 50px;
+    }
+    
+    /* 月別タブ内のヘッダー部分の幅「お支払い予定日4月15日」あたり */
+    .w350_pc {
+        width: 350px;
+    }
+
+    /* 週別グラフのkwh */
+    .kwh {
+        font-size: 1.2rem;
+    }
+
+    /* 週別グラフのkwh */
+    .kwh span {
+        font-size: 1.2rem;
+    }
+
+    /* 日別グラフ(canvas)とX軸の丸いラベル部分 */
+    #graph_day {
+        width: 832px;
+        margin: 0 auto;
+    }
+
+    /* 週別グラフの1,860円、62.5kWh */
+    .price {
+        font-size: 3.4rem;
+    }
+
+    /* 週別グラフの1,860円、62.5kWh */
+    .price span {
+        font-size: 2rem;
+    }
+
+    /* 週別グラフの前週の部分 */
+    .last_week, .last_week.on {
+        padding-left: 30px;
+        background-size: 45%;
+    }
+
+    /* 週別グラフの翌週の部分 */
+    .next_week, .next_week.on {
+        padding-right: 30px;
+        background-size: 45%;
+    }
+
+    /* 月別グラフのグラフ部分 */
+    .graph {
+        overflow-x: visible;
+    }
+
+    /* 現在表示中のプラン */
+    .plan_area {
+        font-size: 1.6rem;
+        margin-top: 10px;
+        justify-content: flex-start;
+    }
+
+    /* 現在表示中のプラン */
+    .select_plan li {
+        line-height: 28px;
+        font-size: 1.6rem;
+        cursor: pointer;
+    }
+
+    /* 日別グラフのX軸の丸いラベルの部分 */
+    .day_list li {
+        cursor: pointer;
+        width: 24px !important;
+        height: 24px !important;
+    }
+
+    /* 月別の赤い点線で囲まれた「当月の電気料金予測」の部分 */
+    .price_forecast {
+        width: auto;
+    }
+
+    .graph_dWrap .label {
+        padding-right: 12px;
+    }
+
+    /* 週別のグラフの横幅の部分 */
+    #graph_week {
+        width: 560px;
+        margin: 0 auto;
+    }
+
+    /* 週別のグラフの「5/3週、5/10週」、「単位：kWh」の部分 */
+    .weekGuide,
+    .weekUnit {
+        width: 560px !important;
+        margin: 0 auto !important;
+    }
+
+    /* 月別のグラフの「前年、似た家庭」の部分 */
+    .line_graph li:nth-child(1) {
+        padding-top: 0;
+    }
+}
+
+hr {
+    height: 1px;
+    margin: 24px 0;
+    background-color: #ccc;
+    border: none;
+}
+@media screen and (min-width: 961px) {
+    hr {
+        margin: 34px 0;
+    }
+}
+
+/* アコーディオン関連　お役立ちコンテンツ（ピックアップ）で使っている　*/
+/* お役立ちコンテンツ（ピックアップ）の「もっと見る」　*/
+ .acc_trg {
+    text-align: center;
+    margin: 34px 0 0;
+}
+
+/* お役立ちコンテンツ（ピックアップ）の「もっと見る」　*/
+.acc_trg span {
+    color: #EB1E1E;
+    font-weight: bold;
+    font-size: 1.4rem;
+    cursor: pointer;
+} 
+
+/* お役立ちコンテンツ（ピックアップ）の初期表示はid=acc0～20のdivをすべて非表示　*/
+#acc_area > div {
+    display: none;
+}
+
+
+
+/* 目標金額 */
+.target_area {
+    border: 2px solid #000;
+    border-radius: 12px;
+    padding: 15px 15px 10px;
+    background: #fff;
+}
+
+/* PCの「目標金額と途中経過」の各幅を決めている */
+@media screen and (min-width: 961px) {
+    .target_area {
+        width: 430px;
+    }
+}
+
+.target_area .flex:nth-child(1) {
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.target_area__head {
+    font-size: 1.6rem;
+}
+
+@media screen and (min-width: 961px) {
+    .target_area__head {
+        font-size: 1.8rem;
+    }
+}
+
+/* 「目標金額と途中経過」の「設定する」の部分 */
+.target_area__head span {
+    font-size: 2.2rem;
+    /* color: #ec1f20; */
+    color: #013ffa;
+}
+
+/* 「目標金額と途中経過」の隣の「？マーク」の部分 */
+.target_area__head .question {
+    vertical-align: middle;
+}
+
+@media screen and (min-width: 961px) {
+    /* 「設定する」のリンクの部分 */
+    .target_area__link {
+        font-size: 1.6rem;
+    }
+}
+
+/* 「設定する」のリンクの部分 */
+.target_area__link::after {
+    content: "";
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border: 2px solid #212121;
+    border-bottom: none;
+    border-left: none;
+    transform: rotate(45deg);
+    margin: 0 0 0px 5px;
+    position: relative;
+    top: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 961px) {
+    /* 「設定する」の＞（矢印）の部分 */
+    .arrow::after {
+        margin: 0 0 1px 5px;
+    }
+}
+
+.target_area .flex:nth-child(2) {
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+/* 「目標金額と途中経過」の「吹き出し」の部分 */
+.target_area__bubble {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 10px;
+    width: 40%;
+}
+
+/* 「目標金額と途中経過」の「吹き出し」の尖った三角の部分（塗りつぶしの白部分） */
+.target_area__bubble::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    margin-top: -10px;
+    border: 10px solid transparent;
+    border-left: 10px solid #FFF;
+    z-index: 2;
+}
+
+/* 「目標金額と途中経過」の「吹き出し」の尖った三角の部分（黒い線の部分） */
+.target_area__bubble::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -22px;
+    margin-top: -11px;
+    border: 11px solid transparent;
+    border-left: 11px solid #000;
+    z-index: 1;
+}
+
+/* 「目標金額と途中経過」の「テプコンの画像」の大きさを調節 */
+.target_area__img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: none;
+    margin-right: 5px;
+    width: 20%;
+    max-width: 80px;
+}
+
+/* PCの「目標金額と途中経過」の「テプコンの画像」 */
+@media screen and (min-width: 961px) {
+    .target_area__img {
+        width: 16%;
+    }
+}
+
+/* 「目標金額と途中経過」のグラフ */
+.target_area__graph {
+    overflow: hidden; /* 初期表示は、hiddenになっている。jsから操作することによって、グラフが表示される */
+    display: flex;
+    flex-direction: column; /* 縦方向 */
+    justify-content: center;
+    border-left: 2px solid #bfbfbf; /* 左側にグレーの線 */
+    padding: 4px 0;
+    width: 40%;
+    font-size: 1rem;
+}
+
+/* 「目標金額と途中経過」のグラフ */
+.target_area__graph > *:first-child {
+    margin-bottom: 10px;
+}
+
+/* 「目標金額と途中経過」の「目標金額」のグラフ */
+.target_area__graph__target {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0 20px 20px 0;
+    padding: 0 7px 0 4px;
+    background: #ff6633;
+    height: 40px;
+    color: #fff;
+    width: 100%;
+}
+
+/* 左側のブロックの「目標金額と途中経過」の「目標金額」が【設定なし】の場合のグラフ */
+.target_area.is-noset .target_area__graph__target {
+    border: 4px solid #ff6633;
+    border-left: none;
+    background: none;
+    color: #ff6633;
+}
+
+/* 「目標金額と途中経過」の「目標金額」のグラフ */
+.target_area__graph__target dd span {
+    font-weight: bold;
+}
+
+/* 「目標金額と途中経過」の「予測金額」のグラフ */
+.target_area__graph__predict {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 4px dashed #e62320;
+    border-left: none;
+    border-radius: 0 20px 20px 3px;
+    padding: 0 7px 0 4px;
+    height: 40px;
+    color: #ed5e5b;
+    width: 100%;
+}
+
+/* 「目標金額と途中経過」の「予測金額」のグラフ */
+.target_area__graph__predict dd span {
+    font-weight: bold;
+}
+
+/* タブレットの場合は、グラフの文字を大きくしている */
+@media screen and (min-width: 550px) and (max-width: 960px) {
+
+    .target_area__graph {
+        font-size: 1.2rem;
+    }
+
+    .target_area__graph__target {
+        padding: 0 20px 0 8px;
+    }
+
+    .target_area__graph__target dd span {
+        font-size: 1.8rem;
+    }
+
+    .target_area__graph__predict {
+        padding: 0 20px 0 8px;
+    }
+
+    .target_area__graph__predict dd span {
+        font-size: 1.8rem;
+    }
+}
+
+/* 「目標金額と途中経過」のグラフ */
+.js_graph {
+    left: -100%; /* グラフの左端の位置を指定している。（初期表示は、グラフは隠れている） */
+    transition: all 0.4s; /* 要素の変化がなされる際に、変化が滑らかに行われるように設定。allはすべてのプロパティにトランジションが適用し、0.4sかけて実行。 */
+}
+
+/* 目標金額の設定 */
+#goal_modal.modal input[type="text"] {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* サービス */
+
+/* サービスの白枠 */
+#service_area {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    position: relative;
+}
+
+/* サービスの「あなたのくらしをもっと便利にするTEPCOのくらしサービス」の部分 */
+#service_area h1 {
+    font-size: 2rem;
+    margin-top: 0;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* サービスの画像 */
+#service_area .mainV {
+    display: block;
+    margin: 0 auto;
+    max-width: 80%;
+}
+
+/* サービスの「今すぐチェックする」ボタン */
+#service_area .btn {
+    font-size: 1.8rem;
+    border: none;
+    background: #EC1F20;
+}
+
+/* サービスの「今すぐチェックする」ボタン */
+#service_area .btn a {
+    color: #fff;
+}
+
+/* サービスの「おすすめサービス」のタイトル */
+#service_area h2 {
+    margin-bottom: 10px;
+}
+
+/* サービス        > は、直接の子要素であり */
+#service_area .service_item > p {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#service_area .service_item {
+    padding: 10px;
+    border-radius: 15px;
+}
+
+/* サービス　「エネカリ・エネカリプラス」「住設・家電修理サービス」の部分 */
+#service_area .service_item h3 {
+    font-size: 1.4rem;
+    text-align: center;
+    background: #999;
+    position: relative;
+    padding: 6px 0;
+    line-height: 1.2;
+}
+
+/* サービス　「エネカリ・エネカリプラス」「住設・家電修理サービス」の「ページをめくる」部分 */
+#service_area .service_item h3::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-width: 20px 20px 0 0;
+    border-style: solid;
+    border-color: #333 #ccc #333 #ccc;
+    background: #333;
+    display: block;
+    width: 0;
+}
+
+/* サービス        > は、直接の子要素であり */
+#service_area .service_item > div {
+    position: relative;
+}
+
+/* サービス        > は、直接の子要素であり */
+#service_area .service_item > div > h3 {
+    width: 100%;
+    text-align: center;
+    padding: 4px;
+}
+
+/* サービス        > は、直接の子要素であり */
+/* サービス　「エネカリ・エネカリプラス」「住設・家電修理サービス」の部分 */
+#service_area .service_item > div > h3 span {
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+}
+
+#service_area .service_item > div > p {
+    position: absolute; /* ここで「エネカリ・エネカリプラス」「住設・家電修理サービス」の部分の高さが小さくなっている */
+    bottom: 10px;
+    right: 0;
+    z-index: 2;
+    text-align: right;
+}
+
+/* サービス　「エネカリ・エネカリプラス」「住設・家電修理サービス」の「画像」の部分 */
+#service_area .service_item > div > p img {
+    width: 30%;
+}
+
+/* サービス　「エネカリ・エネカリプラス」の背景色 */
+#service_area .service_item.area_red {
+    background: #ffeee8;
+}
+
+/* サービス　「エネカリ・エネカリプラス」のタイトルの背景色 */
+#service_area .service_item.area_red h3 {
+    background: #ffb59c;
+}
+
+/* サービス　「エネカリ・エネカリプラス」の「ページをめくる部分」 */
+#service_area .service_item.area_red h3::before {
+    border-color: #ff8459 #ffeee8 #ff8459 #ffeee8;
+    background: #ff8459;
+}
+
+/* サービス　「住設・家電修理サービス」の背景色 */
+#service_area .service_item.area_blue {
+    background: #f3f9fe;
+}
+
+/* サービス　「住設・家電修理サービス」のタイトルの背景色 */
+#service_area .service_item.area_blue h3 {
+    background: #8bc2f1;
+}
+
+/* サービス　「住設・家電修理サービス」の「ページをめくる部分」 */
+#service_area .service_item.area_blue h3::before {
+    border-color: #1786e3 #f3f9fe #1786e3 #f3f9fe;
+    background: #1786e3;
+}
+
+
+/* サービス 
+「.service_item クラスが付与された要素の直後に続く .service_item クラスが付与された要素」を指定します。
+
+つまり、.service_itemというクラスが付与された要素が連続して出現する場合に、
+2番目以降の要素に対して上部のマージン（margin-top）を10ピクセルに設定するという意味です。 */
+.service_item+.service_item {
+    margin-top: 10px;
+}
+
+@media screen and (min-width: 961px) {
+    /* サービス　「あなたのくらしをもっと便利にするTEPCOのくらしサービス」のタイトル */
+    #service_area h1 {
+        font-size: 2.4rem;
+    }
+    
+    /* サービスの画像 */
+    #service_area .mainV {
+        margin: 0 auto;
+        max-width: 770px;
+    }
+
+    /* サービス　「今すぐチェックする」ボタン */
+    #service_area .btn {
+        font-size: 3rem;
+        height: 60px;
+        width: 430px;
+        line-height: 60px;
+    }
+
+    #service_area h2 {
+        margin-bottom: 20px;
+    }
+
+    /* サービス　
+    　「新築・リフォームを検討の方必見！～新サービスをご紹介」の部分（左側）と、
+    　「エネカリ・エネカリプラス」または「住設・家電修理サービス」の部分（右側）
+    　を横並びにする */
+    #service_area .service_item {
+        display: flex; /* 横並び */
+        align-items: center;
+        padding: 10px 10px 10px 36px;
+    }
+
+    #service_area .service_item > p {
+        font-size: 2rem;
+        margin-bottom: 0;
+    }
+
+    /* サービス　「エネカリ・エネカリプラス」または「住設・家電修理サービス」のタイトルの部分（右側） */
+    #service_area .service_item > div h3 {
+        font-size: 2.4rem;
+        text-align: left;
+        position: absolute;
+        bottom: 10px;
+        z-index: 1;
+        padding: 10px 20px;
+    }
+
+    /* サービス　「新築・リフォームを検討の方必見！～新サービスをご紹介」の部分（左側） */
+    #service_area .service_item > p {
+        width: 44%;
+    }
+
+    /* サービス　「エネカリ・エネカリプラス」または「住設・家電修理サービス」の部分（右側） */
+    #service_area .service_item > div {
+        width: 56%;
+    }
+
+    /* サービス　「エネカリ・エネカリプラス」または「住設・家電修理サービス」の部分（右側） */
+    #service_area .service_item > div > p {
+        position: relative;
+        text-align: right;
+        bottom: 0;
+    }
+
+    /* サービス　「エネカリ・エネカリプラス」または「住設・家電修理サービス」の部分（右側） */
+    #service_area .service_item > div > p img {
+        width: 170px;
+        margin-right: 20px;
+    }
+
+    /* サービス 
+    「.service_item クラスが付与された要素の直後に続く .service_item クラスが付与された要素」を指定します。
+
+    つまり、.service_itemというクラスが付与された要素が連続して出現する場合に、
+    2番目以降の要素に対して上部のマージン（margin-top）を10ピクセルに設定するという意味です。 */
+    .service_item+.service_item {
+        margin-top: 20px;
+    }
+}
+
+
+
