@@ -1,0 +1,182 @@
+:root {
+    --min-scale-size-pc: 1;
+    --min-scale-size-sp: 1;
+}
+
+.astro-BBLZP602 {
+    all: revert;
+    display: flex;
+    padding: 0 35px;
+    align-items: center;
+    justify-content: center;
+    background-color: aliceblue;
+}
+
+.astro-BBLZP602 .wrapper {
+    all: revert;
+    width: 100%;
+    position: relative;
+}
+
+.astro-BBLZP602 .wrapper .carousel {
+    all: revert;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% / 3) -12px);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 17px;
+    border-radius: 8px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    padding: 10px 0;
+}
+
+.astro-BBLZP602 .carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.astro-BBLZP602 .carousel.no-transition {
+    scroll-behavior: auto;
+}
+
+.astro-BBLZP602 .carousel.dragging .card {
+    cursor: grab;
+    user-select: none;
+}
+
+.astro-BBLZP602 .carousel .card {
+    all: revert;
+    height: 100%;
+    list-style: none;
+    background: #fff;
+    cursor: pointer;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 
+        0px 2px 12px 4px rgba(0,16,14,0.08),
+        0px 2px 12px 4px rgba(0,16,14,0.14);
+        transition: box-shadow 0.3s ease;
+}
+
+.astro-BBLZP602 .card .image-box {
+    all: revert;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px 8px 0 0;
+    user-drag: none;
+    object-fit: cover;
+    -webkit-user-drag: none;
+    -moz-user-select: none;
+}
+
+.astro-BBLZP602 .carousel .card .profile-details {
+    all: revert;
+    display: flex;
+    align-items: center;
+    column-gap: 12px;
+    padding: 24px 16px;
+}
+
+.astro-BBLZP602 .carousel .card .profile-details img {
+    all: revert;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+.astro-BBLZP602 .carousel .profile-details .name-job {
+    all: revert;
+    display: grid;
+    gap: 12px;
+}
+
+.astro-BBLZP602 .carousel .profile-details .name {
+    all: revert;
+    font-size: 18px;
+    font-weight: 500;
+    color: #00100e;
+    font-weight: bold;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.astro-BBLZP602 .carousel .job {
+    all: revert;
+    font-size: 1.6px;
+    font-weight: 500;
+    color: rgba(0, 16, 14, 0.56);
+    margin: 0;
+    line-height: 1.6;
+}
+
+.astro-BBLZP602 .slider__Btn {
+    all: revert;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    z-index: 4;
+    transition: background-color 0.3s ease;
+
+    width: 48px;
+    height: 48px;
+    background-color: #fff;
+    box-shadow: 
+        0 8px 18px -2px rgba(0, 16, 14, 0.08),
+        0 8px 36px 16px rgba(0, 16, 14, 0.03);
+    border-radius: 50%;
+    margin: auto;
+    position: absolute;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.astro-BBLZP602 .slider__prev {
+    left: -22px;
+}
+
+.astro-BBLZP602 .slider__next {
+    right: -22px;
+}
+
+.astro-BBLZP602 .slider__Btn:hover {
+    background-color: #f7f8f8;
+}
+
+.astro-BBLZP602 .slider__Btn:active {
+    background-color: #e8e8e8;
+}
+
+.astro-BBLZP602 .slider__Btn svg {
+    width: 13px;
+    height: 16px;
+    overflow: visible;
+    vertical-align: -3px;
+}
+
+@media screen and (max-width: 1400px) {
+    .astro-BBLZP602 .carousel .profile-details .name {
+        font-size: 16px;
+    }
+    .astro-BBLZP602 .carousel .profile-details .job {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .astro-BBLZP602 .wrapper .carousel {
+        grid-auto-columns: calc((100% / 2) - 9px);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .astro-BBLZP602 .wrapper .carousel {
+        grid-auto-columns: 100%;
+    }
+}
