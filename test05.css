@@ -28,7 +28,7 @@ h3 {
 .root_CCC:where(.astro_CCC) {
     /* ここを修正 */
     /* height: 25vw; */
-    height: 570px;
+    height: 500px;
 
     overflow: hidden;
     position: relative;
