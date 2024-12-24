@@ -1,0 +1,1161 @@
+@charset "UTF-8";
+/* 基本設定 */
+body {
+  background: #ffffff !important;
+  color: #333;
+  font-family: "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  line-height: 1.5;
+}
+main {
+  padding: 0 4.26vw;
+}
+h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+}
+h2 + p {
+  font-size: 1.4rem;
+  text-align: center;
+  margin: 5.3vw 3.73vw 8vw;
+}
+br.pc {
+  display: none;
+}
+.main_wrap {
+  background: none;
+  border-radius: 0 !important;
+}
+.main-equal-px {
+  padding: 0 4.26vw;
+}
+.box-preferential .box-logo span.link {
+  color: #fff;
+  font-size: 1.2rem;
+  letter-spacing: -1px;
+  line-height: 2;
+  display: block;
+  width: 92px;
+  height: 24px;
+  border-radius: 12px 0 0 0;
+  background-color: rgba(0, 0, 0, 0.48);
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding-left: 14px;
+}
+.box-preferential .box-logo span.link::after {
+  content: '';
+  display: inline-block;
+  background: url('../images/preferential/ico-arrow-forward.png') no-repeat 0 0/100%;
+  width: 12px;
+  height: 12px;
+  margin-left: 3px;
+}
+.box-preferential {
+  background: #fff;
+  border-radius: 12px;
+  width: 91.48vw;
+  margin-bottom: 5.3vw;
+  overflow: hidden;
+  box-shadow: 0px 0px 10px #e4e0e1;
+}
+.box-preferential a {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.box-preferential a:hover .box-logo img {
+  transform: scale(1.1);
+  transition: all 0.3s;
+}
+.box-preferential .box-logo {
+  width: 100%;
+  height: 40vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.box-preferential .box-logo img {
+  width: calc(100vw - (2vw * 2));
+  height: auto;
+}
+.box-preferential .box-details {
+  border-top: 2px solid #f4f4f4;
+  padding: 0;
+}
+.box-preferential .box-details .box-details-inner {
+  padding: 2.6vw 3.73vw 6vw;
+}
+.box-preferential .box-details .box-details-inner:first-child {
+  padding: 2.6vw 3.73vw 0;
+}
+.box-preferential .box-details h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1.1;
+}
+.box-preferential .box-details h3 span {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.box-preferential .box-details .box-subtitle {
+  font-size: 1.4rem;
+  padding-bottom: 4px;
+}
+.box-preferential .box-details .box-text {
+  font-size: 1.6rem;
+}
+
+img {
+  object-fit: cover;
+}
+.flex-container {
+  display: flex;
+  justify-content: left;   /* TODO: ここを修正 justify-content: space-between; をleftに修正 */
+  flex-wrap: wrap;
+}
+.box-preferential-sm {
+  width: calc(50% - 4px);
+  margin-right: 4px;
+  margin-bottom: 8px;
+}
+.box-preferential-sm:nth-child(2n) {
+  margin-right: 0;
+}
+.box-preferential-sm:nth-child(4n) {
+  margin-right: initial;
+}
+.category-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0 15px 0;
+}
+.category-wrap span {
+  margin-right: 16px;
+  flex: 1;
+}
+.category-wrap select {
+  background-color: #fff;
+  border: 1px solid #e4e0e1;
+  border-radius: 3px;
+  padding: 10px 60px 10px 10px;
+}
+.dropdown-wrap {
+  cursor: pointer;
+  position: relative;
+  width: 16rem;
+  box-shadow: 0px 0px 10px #e4e0e1;
+  flex: 2;  /* 960px以下の場合、プルダウンの横幅が2倍の大きさにする */
+}
+.dropdown-wrap::after {
+  content: '';
+  color: #333;
+  position: absolute;
+  top: 15px;
+  right: 12px;
+  width: 6px;
+  height: 6px;
+  border-right: 1px solid #333;
+  border-bottom: 1px solid #333;
+  transform: rotate(45deg);
+  transition: all 0.2s ease-in-out;
+}
+.dropdown-wrap.open::after {
+  top: 18px;
+  transform: rotate(-135deg);
+}
+.dropdown-selected {
+  border-radius: 5px;
+}
+.dropdown-selected.open {
+  border-radius: 5px 5px 0 0;
+}
+.dropdown-wrap li {
+  background: #ffffff;
+  border: 1px solid #e4e0e1;
+  padding: 10px 6px;
+}
+.dropdown-list {
+  display: none;
+  background: #fff;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+}
+.dropdown-list.open {
+  display: block;
+}
+.dropdown-list.open li:last-child {
+  border-radius: 0 0 5px 5px;
+}
+.dropdown-list li {
+  border-top: 0;
+}
+.dropdown-list li:hover {
+  background-color: #f4f4f4;
+  color: #eb1e1e;
+}
+
+.box-details .box-subtitle {
+  min-height: initial;
+}
+.box-details .box-title {
+  color: #e62320;
+  min-height: initial;
+}
+.box-details .box-text {
+  min-height: initial;
+}
+.box-details .box-divider {
+  display: flex;
+  align-items: center;
+  margin-top: 2.6vw;
+}
+.box-details .box-divider::before {
+  content: '';
+  height: 1px;
+  background-color: #e4e0e1;
+  flex-grow: 1;
+}
+.box-details .box-button-detail {
+  background-color: #555555;
+  color: #fff;
+  border-radius: 20px;
+  margin: 8px 30% 0;
+  padding: 4px 0;
+  text-align: center;
+}
+.box-preferential a:hover .box-button-detail {
+  transition: all 0.3s;
+  background-color: #333333;
+  color: #fff;
+}
+
+.caption-text {
+  text-align: left;
+  padding-left: 16px;
+  margin-bottom: 32px;
+  position: relative;
+}
+.caption-text::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 3px;
+  width: 5px;
+  height: 22px;
+  background-color: #e62320;
+}
+.caption-text-sm {
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-align: left;
+  padding-left: 10px;
+  margin-bottom: 12px;
+  position: relative;
+}
+.caption-text-sm::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 3px;
+  height: 14px;
+  background-color: #e62320;
+}
+.caption-text-sm:not(:first-child) {
+  margin-top: 24px;
+}
+
+/* 行省略 */
+.js-line-clamp-02,
+.js-line-clamp-03,
+.js-line-clamp-04,
+.line-clamp-02,
+.line-clamp-03,
+.line-clamp-04 {
+  display: -moz-box;
+  display: -webkit-box;
+  display: box;
+  -moz-box-orient: vertical;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+  overflow: hidden;
+}
+
+.js-line-clamp-02 {
+  -webkit-line-clamp: 2;
+}
+.js-line-clamp-03 {
+  -webkit-line-clamp: 3;
+}
+.js-line-clamp-04 {
+  -webkit-line-clamp: 4;
+}
+
+/* JS制御しない場合 */
+.line-clamp-02 {
+  -webkit-line-clamp: 2;
+}
+.line-clamp-03 {
+  -webkit-line-clamp: 3;
+}
+.line-clamp-04 {
+  -webkit-line-clamp: 4;
+}
+
+.benefits-wrap {
+  background-color: #e4e0e1;
+  display: flex;
+  border-radius: 3px;
+}
+.benefits-inner {
+  background-color: #fff;
+  border-radius: 5px;
+  margin: 8px;
+  padding: 0 8px 8px 8px;
+  width: 100%;
+}
+.benefits-inner .benefits-uses {
+  margin: 8px 0;
+}
+.benefits-inner .benefits-uses span {
+  background: #f6ec93;
+  border-radius: 4px;
+  font-size: 1.25rem;
+  padding: 0 10px;
+}
+.benefits-inner .benefits-store-name {
+  font-weight: bold;
+  font-size: 1.7rem;
+}
+.benefits-inner .benefits-detail {
+  color: #e62320;
+  font-size: 2.3rem;
+  text-align: left;
+}
+.benefits-inner .benefits-detail strong {
+  font-size: 1.5em;
+}
+.benefits-code-wrap {
+  background-color: #ffefef;
+  border-radius: 5px;
+  padding-bottom: 8px;
+}
+.benefits-code-wrap p {
+  font-size: 1.3rem;
+  padding: 12px;
+  text-align: center;
+}
+.benefits-code-wrap p:last-child {
+  text-align: initial;
+}
+.benefits-code-relative-inner {
+  display: flex;
+  justify-content: center;
+}
+.benefits-code-relative-inner > div {
+  position: relative;
+}
+.benefits-code-wrap .coupon-code {
+  color: #000000;
+}
+.benefits-code-wrap .button-coupon-code-copy {
+  background: #e62320;
+  border: 0;
+  border-radius: 5px;
+  padding: 4px 24px;
+  color: #fff;
+  position: initial;
+  display: block;
+  margin: 8px auto;
+  cursor: pointer;
+}
+.benefits-inner .benefits-terms-toggle {
+  cursor: pointer;
+  color: #e62320;
+  font-size: 1.6rem;
+  text-align: center;
+  text-decoration: underline;
+  margin-top: 20px;
+}
+.benefits-inner .benefits-terms-toggle::after {
+  content: '+';
+}
+.benefits-inner .benefits-terms-toggle.open {
+  display: none;
+}
+.benefits-terms-close {
+  display: none;
+  cursor: pointer;
+  color: #333333;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+}
+.benefits-terms-close:first-child {
+  margin: 24px 0;
+}
+.benefits-terms-close:last-child {
+  margin-top: 24px;
+}
+.benefits-inner .benefits-terms-close.open {
+  display: block;
+}
+.benefits-terms-close::before {
+  content: '-';
+}
+.benefits-terms-wrap {
+  background: #fcfbfb;
+  border-radius: 5px;
+  display: none;
+  padding: 12px 8px;
+}
+.benefits-terms-wrap.open {
+  display: block;
+}
+.benefits-terms-inner .contents-wrap {
+  padding-left: 1.2rem;
+  font-size: 1.25rem;
+}
+.benefits-terms-inner .contents-wrap:has(ul) {
+  padding-left: 3rem;
+}
+.benefits-terms-inner .link-coupon-store {
+  color: #e62320;
+  font-weight: bold;
+  text-decoration: underline;
+}
+.benefits-terms-inner .link-coupon-store-2 {
+  text-decoration: underline;
+}
+.benefits-terms-inner .contents-wrap ul {
+  list-style: initial;
+  list-style-type: initial;
+}
+.list-mb-20 li {
+  margin-bottom: 20px;
+}
+.button-link-wrap {
+  margin: 24px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button-link-wrap img {
+  width: initial;
+  margin-left: 6px;
+}
+.benefits-how-to a {
+  background-color: #e4e0e1;
+  border-radius: 90px;
+  font-size: 1.6rem;
+  padding: 14px 0;
+  transition: all 0.3s;
+  width: 335px;
+  text-align: center;
+}
+.benefits-how-to a::after {
+  content: '';
+  position: relative;
+  top: 1px;
+  left: 4px;
+  display: inline-block;
+  border-style: solid;
+  border-width: 0.5em 0 0.5em 0.865em;
+  border-color: transparent transparent transparent #333;
+  transform: translateY(0.1em) scale(0.8);
+}
+.benefits-how-to a:hover {
+  background-color: color-mix(in in srgb, #e4e0e1, #000000);
+  opacity: 0.85;
+}
+.card {
+  border-radius: 4px;
+  box-shadow: 0px 0px 5px #e4e0e1;
+  padding: 8px;
+  position: relative;
+}
+.recommend-card::after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-color: transparent transparent #e62320 transparent;
+  bottom: 10px;
+  right: 10px;
+  border-width: 0px 0 17px 18px;
+}
+.box-preferential-sm.recommend-card::after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-color: transparent transparent #e62320 transparent;
+  bottom: 10px;
+  right: 10px;
+  border-width: 0px 0 17px 18px;
+}
+.recommend-top-wrap {
+  display: block;
+  margin-bottom: 20px;
+  padding: 8px;
+}
+.recommend-top-icon {
+  position: absolute;
+  top: -8px;
+  left: -4px;
+}
+.recommend-top-img-wrap {
+  height: initial;
+  width: initial;
+}
+.recommend-top-img-wrap img,
+.shop-introduction-img-wrap img,
+.recommend-list-img-wrap img {
+  vertical-align: top;
+  height: 100%;
+  width: 100%;
+}
+.recommend-top-text-wrap {
+  margin: 20px 0;
+  padding: 0px 12px;
+}
+.recommend-top-text-wrap h2 {
+  text-align: left;
+  font-size: 16px;
+}
+.recommend-top-text-wrap p {
+  text-align: left;
+  margin: 16px 0 0 0;
+}
+.recommend-list-img-wrap {
+  margin-bottom: 10px;
+  height: initial;
+  width: initial;
+}
+.box-preferential-sm .box-details h3 {
+  font-size: 1.34rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.box-preferential-sm .box-details p {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+.to-online-shop a {
+  background-color: #e62320;
+  color: #ffffff;
+  border-radius: 50px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 14px 0 10px 0;
+  transition: all 0.3s;
+  text-align: center;
+  width: 329px;
+}
+.to-online-shop a:hover {
+  background-color: color-mix(in in srgb, #e62320, #000000);
+  opacity: 0.85;
+}
+.shop-introduction-wrap {
+  display: block;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px #e4e0e1;
+  padding: 8px 16px;
+  margin-bottom: 20px;
+}
+.shop-introduction-img-wrap {
+  flex: 1;
+}
+.shop-introduction-top-sp {
+  display: flex;
+}
+.shop-introduction-text-wrap {
+  margin: auto 0;
+}
+.shop-introduction-text-wrap h2 {
+  font-size: 20px;
+  margin: 0;
+  text-align: left;
+}
+.shop-introduction-text-wrap h2,
+.shop-introduction-text-wrap p {
+  text-align: left;
+  margin: 0 0 16px 0;
+  text-align: left;
+}
+.shop-introduction-text-wrap p::before {
+  content: '';
+  display: block;
+  height: 1px;
+  background-color: #e4e0e1;
+  position: relative;
+  margin: 12px 0 18px 0;
+}
+.shop-introduction-name-sp {
+  display: flex;
+  flex: 2;
+  font-size: 1.5rem;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+}
+.shop-introduction-name-pc {
+  display: none;
+}
+.how-to-use-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.how-to-use-card {
+  border: 1px solid #e4e0e1;
+  border-radius: 18px;
+  flex: 1;
+  position: relative;
+  width: 340px;
+}
+.how-to-use-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-style: solid;
+  border-color: #e62320 transparent transparent #e62320;
+  border-width: 40px 40px 0px 0px;
+  border-radius: 18px 0 0 0;
+}
+.how-to-use-card:first-child {
+  background-image: url('./assets/images/coupon_detail/how-to-use_1.png'); /* ドット（.）をつけるだけで画像が表示できた */
+  background-repeat: no-repeat;
+  background-position: bottom -8px right 0;
+  background-size: 76px;
+}
+.how-to-use-card:last-child {
+  background-image: url('./assets/images/coupon_detail/how-to-use_2.png'); /* ドット（.）をつけるだけで画像が表示できた */
+  background-repeat: no-repeat;
+  background-position: bottom 4px right 0;
+  background-size: 78px;
+}
+.how-to-use-card-number {
+  position: absolute;
+  left: 8px;
+  top: 3px;
+  color: #ffffff;
+  font-size: 1.4rem;
+}
+.how-to-use-card-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 8px 8px 8px;
+  height: 100%;
+}
+.how-to-use-card-content h2 {
+  font-size: 1.5rem;
+  padding: 10px 71px 10px 10px;
+}
+.how-to-use-card-next-mark {
+  flex: 0.2;
+  margin: 10px 0;
+}
+.how-to-use-card-next-mark::before {
+  content: '';
+  position: relative;
+  top: 3px;
+  left: 0;
+  display: inline-block;
+  border-style: solid;
+  border-width: 15px 10px 0 10px;
+  border-color: #ff6666 transparent transparent transparent;
+}
+.how-to-link {
+  cursor: pointer;
+  color: #e62320;
+  font-size: 1.4rem;
+  text-align: center;
+  text-decoration: underline;
+}
+.how-to-link::after {
+  content: '';
+  position: relative;
+  top: 0;
+  left: 6px;
+  display: inline-block;
+  border-style: solid;
+  border-width: 7px 0 7px 13px;
+  border-color: transparent transparent transparent #e62320;
+  transform: translateY(0.1em) scale(0.8);
+}
+.qa-wrap {
+  margin: 20px 0;
+  font-size: 18px;
+}
+.qa-item {
+  border: 1px solid #b4b4b4;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.qa-que-wrap {
+  cursor: pointer;
+  display: flex;
+  font-size: 1.3rem;
+  position: relative;
+  padding: 1.2rem 3rem 1.2rem 1.2rem;
+}
+.qa-ans-wrap {
+  border-top: 1px solid #b4b4b4;
+  font-size: 1.4rem;
+  padding: 1.2rem 2rem 1.2rem 0.2rem;
+  margin: 0 1rem;
+}
+.qa-que-wrap::before,
+.qa-que-wrap::after {
+  content: '';
+  position: absolute;
+  right: 1.2rem;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  width: 14px;
+  height: 2px;
+  background-color: #333333;
+  transition: all 0.2s;
+}
+.qa-que-wrap::before {
+  transform: rotate(90deg);
+}
+.qa-que-wrap.open::before {
+  transform: initial;
+}
+.qa-ans-wrap {
+  display: none;
+}
+.q-mark {
+  color: #e62320;
+  margin-right: 1rem;
+}
+.flex_pc.jus-center {
+  justify-content: center;
+}
+.caption-text-2 {
+  padding: 40px 0 32px 0;
+  font-size: 2rem;
+}
+.caption-text-2::before {
+  content: '/';
+  display: inline-block;
+  transform: rotateX(180deg);
+  margin-right: 8px;
+}
+.caption-text-2::after {
+  content: '/';
+  margin-left: 8px;
+}
+.coupon-how-to {
+  padding-bottom: 40px;
+}
+.coupon-how-to a {
+  background-color: #e62320;
+  color: #ffffff;
+  border-radius: 24px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  padding: 14px 52px;
+  width: 335px;
+  text-align: center;
+  transition: all 0.3s;
+}
+.coupon-how-to a::after {
+  content: '';
+  position: relative;
+  top: 1px;
+  left: 4px;
+  display: inline-block;
+  border-style: solid;
+  border-width: 0.5em 0 0.5em 0.865em;
+  border-color: transparent transparent transparent #ffffff;
+  transform: translateY(0.1em) scale(0.8);
+}
+.coupon-how-to a:hover {
+  background-color: color-mix(in srgb, #e62320, #000000);
+  opacity: 0.85;
+}
+.attention-wrap {
+  padding: 2rem;
+  background: #d9d9d966;
+}
+.attention-wrap h3 {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.attention-wrap ul {
+  list-style: initial;
+  list-style-type: initial;
+}
+.attention-wrap ul li {
+  font-size: 1.6rem;
+  margin: 0 0 12px 30px;
+}
+.br-sp {
+  display: block;
+}
+.layout-container:first-child {
+  margin-top: 32px;
+}
+.layout-container {
+  margin-bottom: 64px;
+}
+.bg-gray {
+  background: #e4e0e1;
+}
+a.pt-32-pc {
+  display: inline-block;
+  padding-top: 0;
+}
+
+/**
+ * coupon2
+ */
+.m-0 {
+  margin: 0;
+}
+.to-benefits a {
+  background-color: #e62320;
+  color: #ffffff;
+  border: 0;
+  border-radius: 24px;
+  padding: 14px 52px;
+  transition: all 0.3s;
+  text-align: center;
+}
+.to-benefits a:hover {
+  background-color: color-mix(in srgb, #e62320, #000000);
+  opacity: 0.85;
+}
+.recommend-info-text {
+  color: #e62320;
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin: 16px 0 32px 0;
+  text-align: initial;
+}
+
+@media screen and (min-width: 961px) {
+  main {
+    padding: 0;
+  }
+  h2 {
+    font-size: 2.6rem;
+  }
+  h2 + p {
+    font-size: 1.6rem;
+    text-align: center;
+    margin: 20px 0 30px;
+  }
+  br.pc {
+    display: block;
+  }
+  .flex_pc {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .main_wrap {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .box-preferential {
+     width: 280px;
+     margin-right: 20px;
+     margin-bottom: 20px;
+  }
+  .box-preferential-sm {
+    width: 200px;
+    margin-right: 26.5px; /* TODO: ここを修正 margin-right: 20px; */
+    margin-bottom: 20px;
+  }
+  .box-preferential a:hover .box-logo img {
+    transform: scale(1.1);
+    transition: all 0.3s;
+  }
+  .box-preferential .box-logo {
+    height: 150px;
+  }
+  .box-preferential .box-logo img {
+    width: 300px;
+    height: 160px;
+  }
+  .box-preferential .box-details {
+    padding: 0;
+  }
+  .box-preferential .box-details .box-details-inner,
+  .box-preferential .box-details .box-details-inner:first-child {
+    padding: 8px 12px;
+  }
+  .box-preferential:nth-child(3n) {
+    margin-right: 0;
+  }
+  .box-details .box-divider {
+    margin-top: initial;
+  }
+  .box-preferential-sm .box-details h3 {
+    font-size: 1.6rem;
+  }
+  .box-preferential-sm .box-details p {
+    font-size: 1.4rem;
+  }
+  .category-wrap {
+    justify-content: end;
+  }
+  .category-wrap span {
+    flex: initial;
+  }
+  .dropdown-wrap {
+    flex: initial; /* 961px以上の場合、プルダウンの横幅を普通の大きさに戻す */
+  }
+  .caption-text {
+    margin-bottom: 40px;
+    padding-left: 20px;
+  }
+  .caption-text::before {
+    left: 0;
+    top: 3px;
+    width: 5px;
+    height: 28px;
+  }
+  .caption-text-sm {
+    font-size: 1.6rem;
+  }
+  .caption-tex-sm::before {
+    height: 18px;
+  }
+  .caption-text-sm:not(:first-child) {
+    height: 18px;
+    margin-top: 36px;
+  }
+  .box-preferential-sm:nth-child(2n) {
+    margin-right: 26.5px; /* TODO: ここを修正 margin-right: 16px; */ 
+  }
+  .box-preferential-sm:nth-child(4n) {
+    margin-right: 0;
+  }
+  /* ここからエフェクト（山田さん追加） */
+  .recommend_area {
+    display: block;
+  }
+  .recommend_area:hover {
+    transform: translateY(10px);
+  }
+  /* ここまでエフェクト（山田さん追加） */
+  .benefits-inner {
+    padding: 8px 16px;
+  }
+  .benefits-code-wrap {
+    background-color: #ffefef;
+    padding-bottom: 12px;
+  }
+  .benefits-code-wrap .button-coupon-code-copy {
+    position: absolute;
+    top: 4px;
+    left: calc(100% + 3em);
+    margin: 0;
+    min-width: 108px;
+  }
+  .benefits-inner {
+    margin: 20px;
+  }
+  .benefits-inner .benefits-uses span {
+    font-size: 1.7rem;
+  }
+  .benefits-terms-wrap {
+    padding: 12px 30px;
+  }
+  .benefits-terms-inner .contents-wrap {
+    font-size: 1.6rem;
+  }
+  .benefits-code-wrap p {
+    font-size: 1.6rem;
+  }
+  .benefits-code-wrap p:last-child {
+    font-size: 1.2rem;
+    padding-bottom: 0;
+    text-align: center;
+  }
+  .benefits-inner .benefits-detail {
+    font-size: 2.9rem;
+  }
+  .benefits-inner .benefits-store-name {
+    font-size: 2.4rem;
+  }
+  .card {
+    padding: 10px;
+  }
+  .recommend-top-wrap {
+    display: flex;
+    padding: 10px;
+  }
+  .recommend-top-img-wrap {
+    height: 260px;
+    width: 260px;
+  }
+  .recommend-top-text-wrap {
+    margin: auto 0;
+    padding: 0px 24px;
+  }
+  .recommend-top-text-wrap h2 {
+    text-align: left;
+    font-size: 24px;
+  }
+  .recommend-top-text-wrap p {
+    margin: 30px 0 0 0;
+  }
+  .recommend-list-img-wrap {
+    height: 180px;
+    width: 180px;
+  }
+  .recommend-card::after {
+    border-width: 0px 0 25px 27px;
+  }
+  .box-preferential-sm.recommend-card::after {
+    border-width: 0px 0 17px 18px;
+  }
+  .br-sp {
+    display: none;
+  }
+  .recommend-top-icon {
+    top: -36px;
+    left: -8px;
+  }
+  .shop-introduction-wrap {
+    display: flex;
+    padding: 10px 24px;
+  }
+  .shop-introduction-img-wrap {
+    height: 250px;
+    width: 250px;
+  }
+  .shop-introduction-top-sp {
+    display: block;
+  }
+  .shop-introduction-name-sp {
+    display: none;
+  }
+  .shop-introduction-name-pc {
+    display: block;
+  }
+  .shop-introduction-text-wrap h2,
+  .shop-introduction-text-wrap p {
+    margin: 0 10px 0 64px;
+  }
+  .how-to-use-wrap {
+    justify-content: initial;
+    align-items: initial;
+    flex-direction: initial;
+  }
+  .how-to-use-card {
+    min-width: initial;
+    max-width: initial;
+  }
+  .how-to-use-card-next-mark {
+    margin: initial;
+  }
+  .how-to-use-card-next-mark::before {
+    top: 45%;
+    left: 42%;
+    border-width: 10px 0 10px 15px;
+    border-color: transparent transparent transparent #ff6666;
+  }
+  .how-to-use-card:first-child {
+    background-size: 84px;
+    background-position: bottom -4px right 6px;
+  }
+  .how-to-use-card:last-child {
+    background-position: bottom 4px right 4px;
+    background-size: 100px;
+  }
+  .how-to-link {
+    font-size: 2rem;
+  }
+  .how-to-link::after {
+    top: -1px;
+    border-width: 8px 0 8px 16px;
+  }
+  .main-equal-px { /* 山田さんがここを追加して、「よくある質問」と幅を合わせる */
+    padding: 0;
+  }
+  .qa-que-wrap {
+    font-size: inherit;
+  }
+  .qa-ans-wrap {
+    font-size: inherit;
+  }
+  .layout-container:first-child {
+    margin-top: 40px;
+  }
+  .layout-container {
+    margin-bottom: 80px;
+  }
+  a.pt-32-pc {
+    padding-top: 32px;
+  }
+
+  /**
+   * coupon2
+   */
+   .recommend-info-text {
+    text-align: center;
+    margin: 40px 0 0 0;
+   }
+}
+
+/* クーポンコード取得表示 */
+.coupon_get {
+  position: fixed;
+  display: none;
+  width: 80%;
+  height: 60px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px #e4e0e1;
+  z-index: 100;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  background: #ffdbdb;
+  border: 1px solid #e4e0e1;
+  color: #e62320;
+  line-height: 60px;
+}
+.coupon_get p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+.coupon_get p::before {
+  content: '';
+  width: 10px;
+  height: 5px;
+  margin-bottom: 7px;
+  border-left: 2px solid #e62320;
+  border-bottom: 2px solid #e62320;
+  transform: rotate(-45deg);
+  margin-right: 10px;
+}
+@media screen and (min-width: 961px) {
+  .coupon_get {
+    font-size: 1.6rem;
+    width: calc(880px * 0.6);
+  }
+}
