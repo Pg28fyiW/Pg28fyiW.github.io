@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script>
+        /* viewport設定、jQueryだとDOM読み込み後に実行されるのでJSで記載する */
+        var getDevice = (function () {
+            var ua = navigator.userAgent;
+            if (ua.indexOf('iPhone') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 && ua.indexOf('Mobile') > 0) {
+                return 'sp';
+            } else if (ua.indexOf('iPad') > 0 || ua.indexOf('Android') > 0) {
+                return 'tab';
+            } else {
+                return 'other';
+            }
+        })();
+
+        if (getDevice == 'sp') {
+            document.write('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+        } else if (getDevice == 'tab') {
+            document.write('<meta name="viewport" content="width=600">');
+        } else {
+            document.write('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+        }
+    </script>
+    <title>Myポートフォリオ</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./coupon_top.css">
+
+</head>
+
+<body id="home">
+    <header>
+        <div class="header_wrap">
+            <div class="header_head_area flex ai_center jc_between">
+                <h1><a href="index.html"><img src="../images/logo.svg" alt="くらしTEPCO web"></a></h1>
+
+                <div class="weather_area flex ai_center jc_end">
+                    <div _ngcontent-vvr-c30="" class="flex ai_center jc_end">
+                        <img _ngcontent-vvr-c30="" class="weather_icon" src="../images/100.png"
+                            alt="">
+                        <div _ngcontent-vvr-c30="" class="flex fd_column font_size">
+                            <p _ngcontent-vvr-c30="" class="">2023年9月4日
+                                <span _ngcontent-vvr-c30="" class="ml5">月曜日</span>
+                            </p>
+                            <p _ngcontent-vvr-c30="" class="">墨田区
+                                <span _ngcontent-vvr-c30="" class="ml5 txt_orange">22℃</span>/
+                                <span _ngcontent-vvr-c30="" class="ml5 txt_blue">20℃</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- スマホのハンバーガー -->
+                    <div class="navWrap flex ai_center jc_center sp">
+                        <div class="hamburger active flex ai_center jc_center">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+
+                    <!-- PC用のログアウト -->
+                    <div class="pc logout">
+                        ログアウト
+                    </div>
+
+                    <!-- スマホのメニューのモーダル -->
+                    <nav class="modal" id="menu_modal">
+                        <!-- スマホのハンバーガーをクリックしたメニュー -->
+                        <div class="hide" id="hamburger_menu">
+                            <div class="menu_wrap">
+                                <ul>
+                                    <li id="menu_notification" class="notifications active">
+                                        <a href="notification.html">お知らせ一覧</a>
+                                    </li>
+                                    <li class="electrical"><a href="">電気料金・使用量</a></li>
+                                    <li class="arrow_right"><a href="index.html?id=tab1">月別</a></li>
+                                    <li class="arrow_right"><a href="index.html?id=tab2">週別</a></li>
+                                    <li class="arrow_right"><a href="index.html?id=tab3">日別</a></li>
+                                    <li class="arrow_right"><a href="hourly.html">時間別</a></li>
+                                    <li class="details"><a href="https://kurahiro.tepco.co.jp/media/index.html" target="_blank">利用明細</a></li>
+                                    <li class="auto_graph"><a href="forecast.html">当月の電気料金予測</a></li>
+                                    <li class="point"><a href="point.html">くらしTEPCOポイント</a></li>
+                                    <li class="electrical_services"><a
+                                            href="https://www.kurashi.tepco.co.jp/pf/ja/sp/pub/site/kurashinolab/index.page"
+                                            target="_blank">くらしアイデア</a></li>
+                                    <li class="teiden"><a href="https://teideninfo.tepco.co.jp/"
+                                            target="_blank">停電情報</a></li>
+                                    <li class="help"><a href="">よくあるご質問</a></li>
+                                </ul>
+                                <ul class="mt40 account_menu">
+                                    <li class=""><a class="">ニックネームさん</a></li>
+                                    <li class=""><a class="">会員情報の確認・変更</a></li>
+                                    <li class=""><a class="">契約内容の確認・変更</a></li>
+                                    <li class=""><a routerlink="/input/family" class=""
+                                            href="/input/family">プロフィールの確認・変更</a></li>
+                                </ul>
+                                <ul class="mt40 sys_menu">
+                                    <li><a href="">旧バージョンに戻る</a></li>
+                                    <li><a href="">ログアウト</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                    <!-- /スマホのメニューのモーダル -->
+                </div>
+            </div>
+
+            <!-- PCのメニュー -->
+            <nav class="pc_nav">
+                <ul>
+                    <li class="nav1 line1"><a href="index.html"><span>ホーム</span></a></li>
+                    <li class="nav2"><span class="open_details">電気料金<br>・使用量</span>
+                        <ul class="nav_details" id="nav_price">
+                            <li><a href="index.html?id=tab1">月別</a></li>
+                            <li><a href="index.html?id=tab2">週別</a></li>
+                            <li><a href="index.html?id=tab3">日別</a></li>
+                            <li><a href="hourly.html">時間別</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav3 line1 icon_small"><a href="https://kurahiro.tepco.co.jp/media/index.html" target="_blank"><span>利用明細</span></a></li>
+                    <li class="nav4"><a href="forecast.html"><span>電気料金予測</span></a></li>
+                    <li class="nav5"><a href="point.html"><span>くらしTEPCO<br>ポイント</span></a></li>
+                    <li class="nav6"><span>くらしの<br>アイデア</span></li>
+                    <li class="nav7 line1 icon_small"><a href="https://kurahiro.tepco.co.jp/media/index.html" target="_blank"><span>停電情報</span></a></li>
+                    <li class="nav8"><a href=""><span>よくある<br>ご質問</span></a></li>
+                    <li class="nav9 number"><a href="notification.html"><span>お知らせ<br>一覧</span></a></li>
+                    <li class="nav10 line1"><span class="open_details">各種お手続き</span>
+                        <ul class="nav_details" id="nav_procedure">
+                            <li class=""><a class="">会員情報の確認・変更</a></li>
+                            <li class=""><a class="">契約情報の確認・変更</a></li>
+                            <li class=""><a routerlink="/input/family" class="" href="/input/family">プロフィールの確認・変更</a>
+                            </li>
+                            <li class=""><a href="">旧バージョンに戻る</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <div>
+        <div class="main_wrap pt-20">
+            <picture>
+                <source srcset="assets/images/coupon_top/coupon_top_mv.png" media="(min-width:961px)">
+                <img src="assets/images/coupon_top/coupon_top_mv_sp.png" alt="おトクなクーポン">
+            </picture>
+        </div>
+    
+        <main>
+            <div class="main_wrap">
+                <div class="category-wrap">
+                    <span>カテゴリー</span>
+                    <div class="dropdown-wrap">
+                        <ul>
+                            <li class="dropdown-selected">すべてのクーポン</li>
+                            <ul class="dropdown-list">
+                                <li data-category="節電・節約">節電・節約</li>
+                                <li data-category="ポイ活">ポイ活</li>
+                                <li data-category="家事">家事</li>
+                                <li data-category="食・グルメ・料理">食・グルメ・料理</li>
+                                <li data-category="家電">家電</li>
+                                <li data-category="リビング">リビング</li>
+                                <li data-category="キッチン">キッチン</li>
+                                <li data-category="生活改善">生活改善</li>
+                                <li data-category="住居環境">住居環境</li>
+                                <li data-category="環境・エコ">環境・エコ</li>
+                                <li data-category="子育て">子育て</li>
+                                <li data-category="健康・美容">健康・美容</li>
+                                <li data-category="トラベル">トラベル</li>
+                                
+                            </ul>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="main_wrap flex_pc">
+                <section class="box-preferential" data-category="キッチン 節電・節約 食・グルメ・料理 ポイ活">
+                    <a href="#">
+                        <div class="box-logo"><img src="assets/images/coupon_top/img-logo-toranoko.jpg" alt=""></div>
+                        <div class="box-details">
+                            <div class="box-details-inner">
+                                <p class="box-subtitle">box-subtitle おつりで投資トラノコ 1　キッチン 節電・節約 食・グルメ・料理 ポイ活</p>
+                                <h3 class="box-title">box-title 毎月「100円分」投資資金プレゼント</h3>
+                            </div>
+                            <div class="box-divider"></div>
+                            <div class="box-details-inner">
+                                <p class="box-text">
+                                    box-text 毎日のお買い物の「おつり」を自動的に世界中の資産に分散投資できる！毎日のお買い物の「おつり」を、自動的に世界中の資産に分散投資できる！
+                                </p>
+                                <div class="box-button-detail">詳しく見る</div>
+                            </div>
+                        </div>
+                    </a>
+                </section>
+                <section class="box-preferential" data-category="キッチン 節電・節約 ポイ活">
+                    <a href="#">
+                        <div class="box-logo"><img src="assets/images/coupon_top/img-logo-toranoko.jpg" alt=""></div>
+                        <div class="box-details">
+                            <div class="box-details-inner">
+                                <p class="box-subtitle">おつりで投資<br>トラノコ 2　キッチン 節電・節約 ポイ活</p>
+                                <h3 class="box-title">毎月「100円分」<br>投資資金プレゼント</h3>
+                            </div>
+                            <div class="box-divider"></div>
+                            <div class="box-details-inner">
+                                <p class="box-text">
+                                    毎日のお買い物の「おつり」を、自動的に世界中の資産に分散投資できる！毎日のお買い物の「おつり」を、自動的に世界中の資産に分散投資できる！毎日のお買い物の「おつり」を、自動的に世界中の資産に
+                                </p>
+                                <div class="box-button-detail">詳しく見る</div>
+                            </div>
+                        </div>
+                    </a>
+                </section>
+                <section class="box-preferential" data-category="食・グルメ・料理 健康・美容">
+                    <a href="#">
+                        <div class="box-logo"><img src="assets/images/coupon_top/img-logo-toranoko.jpg" alt=""></div>
+                        <div class="box-details">
+                            <div class="box-details-inner">
+                                <p class="box-subtitle">おつりで投資トラノコ 3　食・グルメ・料理</p>
+                                <h3 class="box-title">「100円分」プレゼント</h3>
+                            </div>
+                            <div class="box-divider"></div>
+                            <div class="box-details-inner">
+                                <p class="box-text">毎日のお買い物</p>
+                                <div class="box-button-detail">詳しく見る</div>
+                            </div>
+                        </div>
+                    </a>
+                </section>
+                <section class="box-preferential" data-category="リビング キッチン ポイ活 住居環境 健康・美容">
+                    <a href="#">
+                        <div class="box-logo"><img src="assets/images/coupon_top/img-logo-toranoko.jpg" alt=""></div>
+                        <div class="box-details">
+                            <div class="box-details-inner">
+                                <p class="box-subtitle">おつりで投資トラノコ 4　リビング キッチン ポイ活 住居環境 健康・美容</p>
+                                <h3 class="box-title">毎月「100円分」投資資金プレゼント</h3>
+                            </div>
+                            <div class="box-divider"></div>
+                            <div class="box-details-inner">
+                                <p class="box-text">
+                                    毎日のお買い物の「おつり」を自動的に世界中の資産に分散投資できる！毎日のお買い物の「おつり」を、自動的に世界中の資産に分散投資できる！
+                                </p>
+                                <div class="box-button-detail">詳しく見る</div>
+                            </div>
+                        </div>
+                    </a>
+                </section>
+                <section class="box-preferential" data-category="キッチン 住居環境 子育て">
+                    <a href="#">
+                        <div class="box-logo"><img src="assets/images/coupon_top/img-logo-toranoko.jpg" alt=""></div>
+                        <div class="box-details">
+                            <div class="box-details-inner">
+                                <p class="box-subtitle">おつりで投資<br>トラノコ 5　キッチン 住居環境 子育て</p>
+                                <h3 class="box-title">毎月「100円分」<br>投資資金プレゼント</h3>
+                            </div>
+                            <div class="box-divider"></div>
+                            <div class="box-details-inner">
+                                <p class="box-text">
+                                    毎日のお買い物の「おつり」を、自動的に世界中の資産に分散投資できる！毎日のお買い物の「おつり」を、自動的に世界中の資産に分散投資できる！毎日のお買い物の「おつり」を、自動的に世界中の資産に
+                                </p>
+                                <div class="box-button-detail">詳しく見る</div>
+                            </div>
+                        </div>
+                    </a>
+                </section>
+                <section class="box-preferential" data-category="住居環境 子育て">
+                    <a href="#">
+                        <div class="box-logo"><img src="assets/images/coupon_top/img-logo-toranoko.jpg" alt=""></div>
+                        <div class="box-details">
+                            <div class="box-details-inner">
+                                <p class="box-subtitle">おつりで投資トラノコ 6　住居環境 子育て</p>
+                                <h3 class="box-title">「100円分」プレゼント</h3>
+                            </div>
+                            <div class="box-divider"></div>
+                            <div class="box-details-inner">
+                                <p class="box-text">毎日のお買い物</p>
+                                <div class="box-button-detail">詳しく見る</div>
+                            </div>
+                        </div>
+                    </a>
+                </section>
+            </div>
+        </main>
+    </div>
+    
+
+
+    <footer>
+        <div class="flex jc_center link_lists">
+            <ul class="mt40">
+                <li class="tac"><a href="https://kurahiro.tepco.co.jp/media/index.html" target="_blank">東京電力エナジーパートナー</a></li>
+                <li class="tac"><a href="https://kurahiro.tepco.co.jp/media/index.html" target="_blank">よくあるご質問</a></li>
+                <ul class="flex jc_center">
+                    <li class="tac"><a href="https://kurahiro.tepco.co.jp/media/index.html" target="_blank">ご利用規約</a></li>
+                    <li><a href="https://kurahiro.tepco.co.jp/media/index.html" target="_blank">個人情報保護方針</a></li>
+                </ul>
+            </ul>
+        </div>
+        <div class="bg_white">
+            <p class="logo_tepco"><a href="https://kurahiro.tepco.co.jp/media/index.html" target="_blank"><img src="../images/logo_tepco.png" alt=""></a></p>
+        </div>
+        <div class="copy">
+            <p class="tac">本Webサイト上における各コンテンツは、著作権によって保護されています。</p>
+        </div>
+        <nav class="sp">
+            <ul>
+                <li class="home"><a href="index.html">ホーム</a></li>
+                <li class="idea"><a href="https://kurahiro.tepco.co.jp/media/index.html" target="_blank" target="_blank">くらしアイデア</a></li>
+                <!-- 「各種お手続き」をクリックした時の動きはcommon.jsに記述してある -->
+                <li class="edit"><span><a href="https://kurahiro.tepco.co.jp/media/index.html" target="_blank">各種お手続き</a></span>
+                    <div class="subNav">
+                        <a href="https://kurahiro.tepco.co.jp/media/index.html" target="_blank">会員情報の確認・変更</a>
+                        <a href="https://kurahiro.tepco.co.jp/media/index.html" target="_blank">契約内容の確認・変更</a>
+                        <a href="https://kurahiro.tepco.co.jp/media/index.html" target="_blank">プロフィールの確認・変更</a>
+                        <a href="https://kurahiro.tepco.co.jp/media/index.html" target="_blank">契約を追加・削除する</a>
+                        <a href="https://kurahiro.tepco.co.jp/media/index.html" target="_blank">月額サービス等の契約状況確認</a>
+                    </div>
+                </li>
+                <li class="notice number"><a href="https://kurahiro.tepco.co.jp/media/index.html" target="_blank">お知らせ</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="coupon_top.js"></script>
+
+
+</body>
+
+</html>
